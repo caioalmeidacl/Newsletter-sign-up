@@ -33,7 +33,6 @@ body {
 }
 
 main {
-    display: grid;
     background-color: white;
 }
 
@@ -45,7 +44,7 @@ header {
     grid-area: header;
 }
 
-header h1 { 
+.h1 { 
     font-size: 2.8em;
     font-family: 'Roboto-Bold', sans-serif;
     padding: 20px 0;
@@ -78,9 +77,19 @@ form {
 }
 
 form label {
+    display: flex;
+    justify-content: space-between;
     font-weight: bold;
     font-size:11px;
     padding: 10px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: grid;
 }
 
 form input {
@@ -90,8 +99,19 @@ form input {
     outline: none;
 }
 
+/* so quando der erro   */
+input.error { 
+    background-color: hsla(4, 100%, 67%, 0.25);
+    color: var(--tomato);
+    border: 1px solid hsla(4, 100%, 67%, 0.7);
+}
 
-form button {
+span.errorMsg {
+    font-size: 11px;
+    color: var(--tomato);
+}
+
+button{
     background-color: var(--dark-slate-grey);
     color:white;
     font-weight: bold;
@@ -102,7 +122,7 @@ form button {
     cursor: pointer;
 }
 
-form button:hover {
+button:hover {
     background-color: var(--tomato);
 }
 
@@ -113,12 +133,38 @@ aside img {
     object-fit: cover;
 }
 
-/* accept */
+
 .success {
-   display: none; /* retira o elemento da pagina */
+    grid-template-areas:
+     "main"
+     "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    padding: 10px;
 }
 
-@media (min-width: 769px) and (max-width:1920px) {
+.main {
+    grid-area: main;
+}
+
+.button {
+    grid-area: footer;
+}
+
+button { 
+    border-radius: 5px;
+    width: 100%;
+    height: fit-content;
+}
+
+
+#user-email {
+    font-weight: bold;
+    color: var(--dark-slate-grey);
+}
+
+
+@media (min-width: 769px) {
     body {
         background-color: var(--dark-slate-grey);
         display: flex;
@@ -152,7 +198,7 @@ aside img {
         margin: 0 auto;
     }
     
-    header h1 { 
+    header .h1{ 
         font-size: 3.5em;
     }
 
@@ -166,6 +212,25 @@ aside img {
         padding: 20px;
         max-width: fit-content;
     }
+
+    .success h1  {
+        font-size: 4em;
+    }
+
+    .success {
+        background-color: white;
+        max-width: 30%;
+        min-width:min-content ;
+        height: fit-content;
+        border-radius: 20px;
+        padding: 60px 60px 10px 60px;
+    }   
+    
+    .content p{
+        line-height: 28px;
+        max-width: 92%;
+    }
+
 }
 
 @media  (max-width: 768px) {
@@ -200,6 +265,22 @@ aside img {
     aside {
         grid-area: aside;
     }
- 
+
+    .success {
+        height: 100vh;
+    }
+
+
+    .icon {
+        padding: 10px 0;
+    }
+
+    .main {
+        padding: 150px 10px;
+    }
+
+    .content p{
+        line-height: 28px;
+    }
 }
 

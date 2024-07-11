@@ -8,11 +8,13 @@
   <link rel="stylesheet" href="style.css">
   </head>
 <body>
-  <main>
+  <main class="visible">
     <section>
       <header>
         <div>
-          <h1>Stay updated!</h1>
+          <h1 class="h1">
+            Stay updated!
+          </h1>
           <p>
             Join 60,000+ product managers receiving monthly updates on:
           </p>   
@@ -33,9 +35,9 @@
         </ul>
       </header>
       <form action="#" method="post">
-        <label for="email">Email address</label>
+        <label for="email">Email address <span class="errorMsg hidden">Valid email required</span></label>
         <input type="email" name="email" id="email" placeholder="email@company.com" required />
-        <button type="submit">Subscribe to monthly newsletter</button>
+        <button type="submit" class="button">Subscribe to monthly newsletter</button>
       </form>
     </section>
   
@@ -44,16 +46,25 @@
     </aside>
   </main>  
   
-  <div class="success">
-    <h1 >
-      Thanks for subscribing!
-    </h1>
-  
-    <p>
-      A confirmation email has been sent to ash@loremcompany.com. 
-      Please open it and click the button inside to confirm your subscription.
-    </p>
-    <button>Dismiss message</button>
+  <div class="success hidden">
+    <div class="main">
+      <div class="icon">
+        <img src="/assets/images/icon-success.svg" alt="Icon success">
+      </div>
+      <div class="content">
+        <h1 class="h1">
+          Thanks for subscribing!
+        </h1> 
+        <p>
+          A confirmation email has been sent to <span id="user-email"></span>. 
+          Please open it and click the button inside to confirm your subscription.
+        </p>
+      </div>
+    </div>
+
+    <div class="button">
+      <button id="dismiss">Dismiss message</button>
+    </div>
   </div>
 
 
