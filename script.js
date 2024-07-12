@@ -8,7 +8,7 @@ function changeImage(width) {
     const desktopSrc = "/assets/images/illustration-sign-up-desktop.svg";
 
 
-    const newSrc = width <= 768 ? mobileSrc : desktopSrc;
+    const newSrc = width <= 1059 ? mobileSrc : desktopSrc;
     if (image.getAttribute('src') !== newSrc) {
         image.setAttribute('src', newSrc);
     }

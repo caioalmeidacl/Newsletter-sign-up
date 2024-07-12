@@ -164,7 +164,7 @@ button {
 }
 
 
-@media (min-width: 769px) {
+@media (min-width: 1060px) {
     body {
         background-color: var(--dark-slate-grey);
         display: flex;
@@ -233,7 +233,7 @@ button {
 
 }
 
-@media  (max-width: 768px) {
+@media  (max-width: 1059px) {
     main {
         grid-template-areas: 
         "aside"
